@@ -7,6 +7,8 @@ import Link from "next/link";
 import { profile } from "@/content/profile";
 
 export default function Footer() {
+  const summaryText = profile.summary.join(" ");
+
   return (
     // The footer container with a subtle top border to separate it from the content
     <footer className="w-full border-t border-white/10 bg-[#050505] pt-24 pb-8 px-8 mt-12">
@@ -20,12 +22,10 @@ export default function Footer() {
           className="mb-16"
         >
           <h2 className="text-4xl md:text-6xl font-extrabold tracking-tighter text-white mb-6">
-            Let&apos;s ship secure systems.
+            Let&apos;s connect.
           </h2>
           <p className="text-neutral-400 max-w-lg mx-auto mb-10 text-lg font-light leading-relaxed">
-            I build secure, scalable backends and full-stack products with a
-            strong focus on application security, reliability, and performance.
-            If you want to collaborate or discuss an opportunity, reach out.
+            {summaryText}
           </p>
 
           <a

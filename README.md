@@ -2,7 +2,7 @@
 
 ## About The Project
 
-This is my personal portfolio website built to showcase selected impact, experience, and skills as a Security Engineer / Full-Stack Developer. It is designed to be minimalistic, fast, and fully responsive.
+This is my personal portfolio website built to showcase selected impact, experience, and skills as a Systems Architect & Security Engineer. It is designed to be minimalistic, fast, and fully responsive.
 
 ## Tech Stack
 

@@ -118,21 +118,21 @@ export default function Home() {
           </motion.div>
 
           {/* Call to Action Button */}
-          <motion.div variants={elementVariantsY}>
+          {/* <motion.div variants={elementVariantsY}>
             <Link
               href="#projects"
               className="px-8 py-4 bg-white text-black font-semibold rounded-full hover:bg-neutral-200 transition-colors inline-block"
             >
               View Selected Impact
             </Link>
-          </motion.div>
+          </motion.div> */}
         </motion.div>
       </section>
 
       {/* --- Rest of the sections flow naturally below --- */}
 
       {/* PROJECTS SECTION */}
-      <Projects />
+      {/* <Projects /> */}
 
       {/* EXPERIENCE SECTION */}
       <Experience />

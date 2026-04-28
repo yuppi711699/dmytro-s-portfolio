@@ -34,6 +34,19 @@ export default function Contacts() {
                 {profile.linkedin}
               </a>
             </p>
+            {"website" in profile ? (
+              <p>
+                Website:{" "}
+                <a
+                  href={profile.website}
+                  className="text-blue-500"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {profile.website}
+                </a>
+              </p>
+            ) : null}
             {/* <p>GitHub: {profile.github}</p>
             <p>Twitter: {profile.twitter}</p>
             <p>Facebook: {profile.facebook}</p>

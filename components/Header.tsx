@@ -34,7 +34,7 @@ export default function Header() {
       <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-neutral-400">
         {/* Added '/' before '#' to ensure cross-page navigation works correctly */}
         <Link href="/#projects" className="hover:text-white transition-colors">
-          Projects
+          About
         </Link>
         <Link
           href="/#experience"
