@@ -36,6 +36,9 @@ export default function Header() {
         <Link href="/#projects" className="hover:text-white transition-colors">
           About
         </Link>
+        <Link href="/contacts" className="hover:text-white transition-colors">
+          Contacts
+        </Link>
         <Link
           href="/#experience"
           className="hover:text-white transition-colors"
