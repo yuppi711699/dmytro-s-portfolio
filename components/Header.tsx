@@ -32,12 +32,11 @@ export default function Header() {
 
       {/* Main Desktop Navigation */}
       <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-neutral-400">
-        {/* Added '/' before '#' to ensure cross-page navigation works correctly */}
-        <Link href="/#projects" className="hover:text-white transition-colors">
-          About
+        <Link href="/#technologies" className="hover:text-white transition-colors">
+          Technologies
         </Link>
-        <Link href="/contacts" className="hover:text-white transition-colors">
-          Contacts
+        <Link href="/#projects" className="hover:text-white transition-colors">
+          Projects
         </Link>
         <Link
           href="/#experience"
@@ -45,6 +44,16 @@ export default function Header() {
         >
           Experience
         </Link>
+        <Link href="/contacts" className="hover:text-white transition-colors">
+          Contacts
+        </Link>
+        <a
+          href="/Dmytro_S_Resume.pdf"
+          download
+          className="px-4 py-2 bg-white text-black font-semibold rounded-full hover:bg-neutral-200 transition-colors text-xs"
+        >
+          Resume ↓
+        </a>
       </nav>
 
       {/* Social Links & Contact */}

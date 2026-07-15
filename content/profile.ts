@@ -17,124 +17,264 @@ export type ProfileExperience = {
   highlights: string[];
 };
 
+export type TechnologyItem = {
+  name: string;
+  icon: string;
+};
+
+export type TechnologyCategory = {
+  label: string;
+  items: TechnologyItem[];
+};
+
 export const profile = {
   name: "Dmytro Slootskyi",
-  headline: "Full-Stack Engineer & Security Engineer",
+  headline: "Backend Software Engineer",
   phone: "+1 (778) 522-6547",
   email: "dmytroslootskyi@gmail.com",
   linkedin: "https://linkedin.com/in/dmytro-slootskyi",
   website: "https://dmytro-s-portfolio.vercel.app",
 
   summary: [
-    "Full-Stack Engineer & Security Engineer with 5+ years of experience architecting secure, scalable backend systems (TypeScript, JavaScript, Python, AWS).",
-    "Specializing in integrating robust security protocols into CI/CD pipelines, high-velocity feature delivery and robust application security.",
-    "Experience in high-stakes incident response and data recovery, complemented by a Master’s degree in Automation and advanced Security certifications and deep technical expertise in AI.",
+    "Backend Software Engineer with 5+ years of experience designing secure, scalable cloud applications using Python, TypeScript, Node.js, AWS, Docker, and PostgreSQL.",
+    "Experienced in implementing AWS IAM, VPC, EC2 hardening, KMS, S3 policies, CloudWatch, Security Groups, NACLs, Route53, Load Balancer, and Parameter Store.",
+    "Ranked in the Top 4% on TryHackMe with hands-on experience in penetration testing, Active Directory security, vulnerability assessments, and secure software development.",
   ],
 
   skills: {
-    backend: [
+    programmingBackend: [
       "Python",
-      "TypeScript (Node.js, NestJS, Next.js)",
-      "JavaScript (ES7+)",
+      "TypeScript",
+      "JavaScript",
+      "Node.js",
+      "NestJS",
+      "Express.js",
+      "Next.js",
+      "React",
       "REST APIs",
       "GraphQL",
-      "Solidity",
-      "SQL",
       "Microservices",
       "gRPC",
-      "n8n",
-      "OpenClaw",
     ],
-    cloudSecurity: [
-      "AWS IAM",
-      "AWS Secrets Manager",
-      "VPC Security Groups",
-      "EC2",
+    cloudDevSecOps: [
+      "AWS EC2",
+      "IAM",
       "S3",
+      "VPC",
+      "KMS",
+      "Parameter Store",
+      "Secrets Manager",
+      "Security Groups",
+      "NACLs",
+      "Route53",
+      "Application Load Balancer",
+      "CloudWatch",
       "Docker",
       "Kubernetes",
+      "CI/CD",
+      "GitHub Actions",
+      "Linux",
     ],
-    securityTools: [
-      "Snyk",
-      "SonarQube",
-      "OWASP ZAP",
-      "Incident Response",
-      "Vulnerability Assessment",
-      "Metasploit",
+    applicationSecurity: [
+      "Secure SDLC",
+      "OWASP Top 10",
+      "Threat Modeling",
+      "JWT",
+      "RBAC",
+      "API Security",
+      "Secure Code Review",
+      "Dependency Scanning",
+      "Secrets Management",
+      "Least Privilege",
+    ],
+    offensiveSecurity: [
+      "Kali Linux",
       "Burp Suite",
+      "OWASP ZAP",
       "Nmap",
-      "Hydra",
-      "Wireshark",
+      "Metasploit",
       "Gobuster",
-      "Splunk",
+      "Hydra",
+      "BloodHound",
+      "CrackMapExec",
+      "Hashcat",
+      "John the Ripper",
+      "Wireshark",
     ],
-    aiData: [
-      "LLM API Integration (OpenAI)",
-      "AI Fundamentals",
-      "Data Analytics",
+    vulnerabilityManagement: [
+      "Nessus",
+      "OpenVAS",
+      "CVSS",
+      "Risk Assessment",
+      "Incident Response",
+      "Splunk",
     ],
     databases: [
       "PostgreSQL",
       "MongoDB",
-      "SQL",
       "Redis",
       "RabbitMQ",
-      "AWS IoT Core",
+      "SQL",
     ],
-    projectManagement: [
-      "Agile",
-      "Waterfall",
-      "Scrum",
-      "Kanban",
-      "Trello",
-      "Gantt Charts",
-      "Jira",
+    frameworks: [
+      "MITRE ATT&CK",
+      "NIST CSF",
+      "CIS Controls",
+      "Zero Trust",
+      "Defense in Depth",
+      "STRIDE",
     ],
   },
 
+  technologies: [
+    {
+      label: "Programming & Backend",
+      items: [
+        { name: "Python", icon: "SiPython" },
+        { name: "TypeScript", icon: "SiTypescript" },
+        { name: "JavaScript", icon: "SiJavascript" },
+        { name: "Node.js", icon: "SiNodedotjs" },
+        { name: "NestJS", icon: "SiNestjs" },
+        { name: "Express.js", icon: "SiExpress" },
+        { name: "Next.js", icon: "SiNextdotjs" },
+        { name: "React", icon: "SiReact" },
+        { name: "GraphQL", icon: "SiGraphql" },
+        { name: "Bash", icon: "SiGnubash" },
+      ],
+    },
+    {
+      label: "Cloud & Infrastructure",
+      items: [
+        { name: "AWS", icon: "SiAmazonwebservices" },
+        { name: "EC2", icon: "SiAmazonec2" },
+        { name: "S3", icon: "SiAmazons3" },
+        { name: "IAM", icon: "SiAmazoniam" },
+        { name: "Docker", icon: "SiDocker" },
+        { name: "Kubernetes", icon: "SiKubernetes" },
+        { name: "Nginx", icon: "SiNginx" },
+        { name: "Linux", icon: "SiLinux" },
+      ],
+    },
+    {
+      label: "DevOps & CI/CD",
+      items: [
+        { name: "Git", icon: "SiGit" },
+        { name: "GitHub", icon: "SiGithub" },
+        { name: "GitHub Actions", icon: "SiGithubactions" },
+        { name: "Terraform", icon: "SiTerraform" },
+        { name: "Ansible", icon: "SiAnsible" },
+        { name: "Grafana", icon: "SiGrafana" },
+        { name: "Prometheus", icon: "SiPrometheus" },
+      ],
+    },
+    {
+      label: "Security & Offensive",
+      items: [
+        { name: "Kali Linux", icon: "SiKalilinux" },
+        { name: "Burp Suite", icon: "SiBurpsuite" },
+        { name: "OWASP", icon: "SiOwasp" },
+        { name: "Wireshark", icon: "SiWireshark" },
+        { name: "Metasploit", icon: "SiMetasploit" },
+        { name: "Splunk", icon: "SiSplunk" },
+        { name: "TryHackMe", icon: "SiTryhackme" },
+        { name: "Snyk", icon: "SiSnyk" },
+        { name: "SonarQube", icon: "SiSonarqube" },
+        { name: "HackerOne", icon: "SiHackerone" },
+      ],
+    },
+    {
+      label: "Application Security",
+      items: [
+        { name: "JWT", icon: "SiJsonwebtokens" },
+        { name: "Let's Encrypt", icon: "SiLetsencrypt" },
+        { name: "HashiCorp", icon: "SiHashicorp" },
+        { name: "OpenVPN", icon: "SiOpenvpn" },
+      ],
+    },
+    {
+      label: "Databases & Messaging",
+      items: [
+        { name: "PostgreSQL", icon: "SiPostgresql" },
+        { name: "MongoDB", icon: "SiMongodb" },
+        { name: "Redis", icon: "SiRedis" },
+        { name: "RabbitMQ", icon: "SiRabbitmq" },
+        { name: "MySQL", icon: "SiMysql" },
+        { name: "Elasticsearch", icon: "SiElasticsearch" },
+      ],
+    },
+    {
+      label: "API & Testing",
+      items: [
+        { name: "Postman", icon: "SiPostman" },
+        { name: "Swagger", icon: "SiSwagger" },
+        { name: "Insomnia", icon: "SiInsomnia" },
+        { name: "Sentry", icon: "SiSentry" },
+      ],
+    },
+  ] satisfies TechnologyCategory[],
+
   projects: [
     {
-      title: "B2B SaaS Platform (Greenfield)",
+      title: "AI SaaS Platform — AstroNatal Bot",
       description:
-        "Architected and launched a B2B SaaS platform from scratch, focusing on secure APIs, performance, and operability in early production.",
-      techStack: ["TypeScript", "Next.js", "Node.js", "React", "AWS", "Redis"],
+        "Designed AI SaaS platform using TypeScript, Python, AWS and Docker. Architecture supporting 1,263 MAU with 99%+ availability. Automated workflows saving 10+ hours/week.",
+      techStack: ["TypeScript", "Python", "AWS", "Docker", "AI"],
+    },
+    {
+      title: "Active Directory Security Lab",
+      description:
+        "Built Windows AD lab with Domain Controller, DNS, GPOs and domain users. Used BloodHound and CrackMapExec for enumeration. Practiced Kerberoasting, Pass-the-Hash and lateral movement.",
+      techStack: ["Active Directory", "BloodHound", "CrackMapExec", "Kerberos"],
+    },
+    {
+      title: "Web Application Security Testing",
+      description:
+        "Tested SQLi, XSS, IDOR, CSRF, Command Injection and Broken Authentication. 80+ attack scenarios using Burp Suite and OWASP ZAP.",
+      techStack: ["Burp Suite", "OWASP ZAP", "OWASP Top 10"],
+    },
+    {
+      title: "Vulnerability Assessment",
+      description:
+        "Assessed 100+ simulated hosts using Nmap, Nessus and OpenVAS. Prioritized remediation using CVSS scoring methodology.",
+      techStack: ["Nmap", "Nessus", "OpenVAS", "CVSS"],
+    },
+    {
+      title: "Cloud Security Implementation",
+      description:
+        "Implemented IAM, least privilege, Security Groups, NACLs, EC2 hardening, encrypted S3 buckets, CloudWatch and Parameter Store.",
+      techStack: ["AWS", "IAM", "VPC", "CloudWatch", "S3"],
     },
     {
       title: "Cyber Incident Data Recovery",
       description:
-        "Led critical data recovery after a cyber incident, restoring ~100K corrupted records using custom Python reconstruction scripts.",
+        "Assisted recovery after a cybersecurity incident, restoring 100,000+ records. Research tech solutions for Sphera World, Tejouri, and DIFC.",
       techStack: ["Python", "Data Recovery", "Incident Response"],
-    },
-    {
-      title: "Operational Automation & CRM",
-      description:
-        "Built internal systems and automation that eliminated data silos and reduced manual work dramatically across business workflows.",
-      techStack: ["JavaScript", "Python", "Automation", "SQL"],
     },
   ] satisfies ProfileProject[],
 
   experience: [
     {
       company: "AstroNatal Bot",
-      position: "Founder & Lead Full-Stack Engineer (Startup)",
+      position: "Full-Stack Engineer",
       period: "Dec 2025 — Present",
       highlights: [
-        "Built and launched an AI-powered astrology platform from scratch, owning 100% of product development, UX/UI, and go-to-market strategy.",
-        "Increased user engagement with personalized AI readings, achieving +45% average session duration and 28% 30-day retention.",
-        "Reduced operational workload by ~10 hours/week by automating content generation and user interactions with AI.",
-        "Designed scalable architecture supporting 1,000+ monthly active users with <1% downtime.",
+        "Designed AI SaaS platform using TypeScript, Python, AWS and Docker.",
+        "Designed architecture supporting 1,263 MAU with 99%+ availability.",
+        "Automated workflows saving 10+ hours/week.",
       ],
     },
     {
       company: "ProBuy Inc.",
-      position: "CTO, Software Technical Lead",
+      position: "Lead Backend Developer",
       period: "Sep 2024 — Nov 2025",
       highlights: [
-        "Reduced API latency by 30% by implementing Redis caching.",
-        "Led a team of 3 developers.",
-        "Designed and implemented 100+ secure REST APIs.",
-        "Managed production stability at 99.9%.",
-        "Developed IoT systems and AWS-based infrastructure.",
+        "Designed 100+ REST APIs using NestJS and TypeScript.",
+        "Implemented secure authentication following OWASP.",
+        "Configured AWS IAM, Security Groups, VPC, EC2 hardening, KMS, S3 policies, Route53, ALB, CloudWatch and Parameter Store.",
+        "Reduced API latency by 30% using Redis.",
+        "Performed dependency scanning with Snyk.",
+        "Led team of 3 developers.",
+        "Maintained 99.9% production availability.",
       ],
     },
     {
@@ -142,9 +282,8 @@ export const profile = {
       position: "Technical Specialist",
       period: "Nov 2023 — Apr 2024",
       highlights: [
-        "Tested 180+ network devices per shift.",
+        "Tested 180+ networking devices per shift.",
         "Maintained 100%+ production targets.",
-        "Improved product reliability by identifying defects.",
       ],
     },
     {
@@ -152,56 +291,70 @@ export const profile = {
       position: "IT Analyst & Full-Stack Developer",
       period: "Dec 2021 — Nov 2023",
       highlights: [
-        "Restored ~100K corrupted records after cyber incident.",
-        "Automated workflows reducing manual work by 70%.",
-        "Maintained 99.9% uptime and improved response time.",
+        "Assisted recovery after a cybersecurity incident, restoring 100,000+ records.",
+        "Research tech solutions for Sphera World, Tejouri, and Dubai International Financial Centre (DIFC).",
       ],
     },
     {
       company: "Ug Auto Trans",
-      position: "Technology Analyst & Developer",
+      position: "Junior Software Developer",
       period: "Feb 2020 — Nov 2021",
       highlights: [
-        "Built CRM system boosting throughput by 400%.",
-        "Automated data pipelines reducing manual effort by 85%.",
-      ],
-    },
-    {
-      company: "https://www.ctrs.com.ua",
-      position: "Coach in Computer Science and Robotics",
-      period: "Apr 2017 — Jan 2020",
-      highlights: [
-        "Designed and delivered educational programs in programming and computer science, conducting 5,000+ instructional sessions.",
-        "Maintained an exceptional 99.5% average client satisfaction rating, consistently delivering high-quality training outcomes.",
-      ],
-    },
-    {
-      company: "Odessa National Academy",
-      position: "Mechatronics and Robotics Engineer",
-      period: "Apr 2015 — Mar 2017",
-      highlights: [
-        "Led design and development of pneumatic and autonomous robotic systems, improving operational precision and reliability.",
-        "Developed 1 pneumatic robot.",
-        "Implemented ESP32-based sensor arrays to enhance accuracy of laboratory results.",
-        "Conducted in-depth data analysis and presented insights through clear visualizations (charts and graphs) to support decision-making.",
+        "Built CRM from zero draft with document generation, auto email sends, and file automation scripts.",
+        "Automated workflows reducing manual effort by 85% (total speed up process from 2h to 18 minutes).",
       ],
     },
   ] satisfies ProfileExperience[],
 
+  tryhackme: {
+    ranking: "Top 4% global ranking",
+    rooms: "140+ completed rooms",
+    streak: "215+ day learning streak",
+    badges: "23 badges",
+    paths: [
+      "Pre Security",
+      "Cyber Security 101",
+      "Web Fundamentals",
+      "Jr Penetration Tester",
+    ],
+    skills: [
+      "Active Directory",
+      "Privilege Escalation",
+      "Web Exploitation",
+      "Enumeration",
+      "Password Attacks",
+      "Incident Investigation",
+    ],
+  },
+
   education: [
-    "Odessa National Maritime University — PhD Computer Science (Sept. 2018 — 2030)",
-    "NPower Project Management (Dec. 2025)",
-    "NPower Junior Data Analyst Program (Mar. 2024)",
-    "Hillel IT School — Full-Stack Web Development (May 2020)",
-    "Odessa National Academy — Master’s in Mechatronics (Mar. 2018)",
+    "Master degree of Automation and Computer Technologies",
   ],
 
   certifications: [
-    "Microsoft Azure AI Fundamentals (2024)",
-    "IBM Data Analyst Professional Certificate (2024)",
-    "Google Project Management (2025)",
-    "Cyber Security 101 Certificate (2026)",
-    "Web Security Fundamentals Certificate (2026)",
-    "Jr Penetration Tester Certificate (2026)",
+    {
+      name: "TryHackMe: Jr Penetration Tester",
+      code: "THM-FEBJO1TGTD",
+    },
+    {
+      name: "TryHackMe: Web Fundamentals",
+      code: "THM-9BZDMIE0UT",
+    },
+    {
+      name: "TryHackMe: Cyber Security 101",
+      code: "THM-REKMTVLFXK",
+    },
+    {
+      name: "Microsoft Azure AI Fundamentals",
+      code: "6581388F4BB8D8BC",
+    },
+    {
+      name: "IBM Data Analyst Professional Certificate",
+      code: "",
+    },
+    {
+      name: "Google Project Management",
+      code: "VEVKDHMIK92D",
+    },
   ],
 } as const;
