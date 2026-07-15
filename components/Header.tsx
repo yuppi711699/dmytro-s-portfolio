@@ -32,7 +32,10 @@ export default function Header() {
 
       {/* Main Desktop Navigation */}
       <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-neutral-400">
-        <Link href="/#technologies" className="hover:text-white transition-colors">
+        <Link
+          href="/#technologies"
+          className="hover:text-white transition-colors"
+        >
           Technologies
         </Link>
         <Link href="/#projects" className="hover:text-white transition-colors">
@@ -52,7 +55,7 @@ export default function Header() {
           download
           className="px-4 py-2 bg-white text-black font-semibold rounded-full hover:bg-neutral-200 transition-colors text-xs"
         >
-          Resume ↓
+          CV/Resume ↓
         </a>
       </nav>
 

@@ -1,9 +1,9 @@
 "use client";
 
-import { motion, Variants } from "framer-motion";
+import { motion, Variants, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Shield, Terminal, Target, Award } from "lucide-react";
 import Projects from "@/components/Projects";
 import Experience from "@/components/Experience";
@@ -12,12 +12,26 @@ import Footer from "@/components/Footer";
 import { profile } from "@/content/profile";
 
 export default function Home() {
+  const roles: string[] = [
+    "Security Engineer",
+    "Backend Software Engineer",
+    "Penetration Tester",
+  ];
+  const [roleIndex, setRoleIndex] = useState(0);
+
   useEffect(() => {
     if ("scrollRestoration" in history) {
       history.scrollRestoration = "manual";
     }
     window.scrollTo(0, 0);
   }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setRoleIndex((prev) => (prev + 1) % roles.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, [roles.length]);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -98,8 +112,18 @@ export default function Home() {
 
             <div className="relative">
               <motion.div
-                animate={{ boxShadow: ["0 0 20px rgba(16,185,129,0.15)", "0 0 40px rgba(16,185,129,0.3)", "0 0 20px rgba(16,185,129,0.15)"] }}
-                transition={{ duration: 3, ease: "easeInOut", repeat: Infinity }}
+                animate={{
+                  boxShadow: [
+                    "0 0 20px rgba(16,185,129,0.15)",
+                    "0 0 40px rgba(16,185,129,0.3)",
+                    "0 0 20px rgba(16,185,129,0.15)",
+                  ],
+                }}
+                transition={{
+                  duration: 3,
+                  ease: "easeInOut",
+                  repeat: Infinity,
+                }}
                 className="absolute -inset-1 bg-gradient-to-br from-emerald-500/30 via-transparent to-cyan-500/20 rounded-full"
               />
               <Image
@@ -139,19 +163,36 @@ export default function Home() {
               {profile.name}
             </motion.h1>
 
-            {/* Headline with terminal cursor */}
+            {/* Headline with cycling roles */}
             <motion.div
               variants={elementVariantsY}
-              className="flex items-center gap-2 mb-8"
+              className="flex items-center gap-2 mb-8 h-9 overflow-hidden"
             >
-              <span className="text-emerald-400 font-mono text-lg">$</span>
-              <h2 className="text-xl md:text-2xl font-mono text-emerald-400/90">
-                {profile.headline}
-              </h2>
+              <span className="text-emerald-400 font-mono text-lg shrink-0">
+                $
+              </span>
+              <div className="relative h-full flex items-center">
+                <AnimatePresence mode="wait">
+                  <motion.h2
+                    key={roles[roleIndex]}
+                    initial={{ y: 20, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    exit={{ y: -20, opacity: 0 }}
+                    transition={{ duration: 0.3, ease: "easeInOut" }}
+                    className="text-xl md:text-2xl font-mono text-emerald-400/90 whitespace-nowrap"
+                  >
+                    {roles[roleIndex]}
+                  </motion.h2>
+                </AnimatePresence>
+              </div>
               <motion.span
                 animate={{ opacity: [1, 0, 1] }}
-                transition={{ duration: 1, repeat: Infinity, repeatType: "loop" }}
-                className="w-2.5 h-6 bg-emerald-400"
+                transition={{
+                  duration: 1,
+                  repeat: Infinity,
+                  repeatType: "loop",
+                }}
+                className="w-2.5 h-6 bg-emerald-400 shrink-0"
               />
             </motion.div>
 
@@ -161,7 +202,9 @@ export default function Home() {
               className="text-base md:text-lg text-neutral-400 font-light max-w-2xl mb-8 space-y-2"
             >
               {profile.summary.map((line) => (
-                <p key={line} className="leading-relaxed">{line}</p>
+                <p key={line} className="leading-relaxed">
+                  {line}
+                </p>
               ))}
             </motion.div>
 
@@ -177,15 +220,22 @@ export default function Home() {
                 >
                   <stat.icon className="w-4 h-4 text-emerald-400/70" />
                   <div className="flex flex-col">
-                    <span className="text-xs text-neutral-500 font-mono uppercase">{stat.label}</span>
-                    <span className="text-sm font-semibold text-white">{stat.value}</span>
+                    <span className="text-xs text-neutral-500 font-mono uppercase">
+                      {stat.label}
+                    </span>
+                    <span className="text-sm font-semibold text-white">
+                      {stat.value}
+                    </span>
                   </div>
                 </div>
               ))}
             </motion.div>
 
             {/* CTA buttons with cyber style */}
-            <motion.div variants={elementVariantsY} className="flex gap-4 flex-wrap">
+            <motion.div
+              variants={elementVariantsY}
+              className="flex gap-4 flex-wrap"
+            >
               <Link
                 href="#technologies"
                 className="px-8 py-4 bg-emerald-500 text-black font-semibold rounded-full hover:bg-emerald-400 transition-colors inline-flex items-center gap-2"
@@ -198,7 +248,7 @@ export default function Home() {
                 download
                 className="px-8 py-4 bg-transparent text-emerald-400 font-semibold rounded-full border border-emerald-500/25 hover:bg-emerald-500/10 transition-colors inline-block"
               >
-                Download Resume
+                Download CV/Resume
               </a>
             </motion.div>
           </motion.div>
