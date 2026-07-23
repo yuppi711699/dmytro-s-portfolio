@@ -38,7 +38,7 @@ export const profile = {
   summary: [
     "Backend Software Engineer with 5+ years of experience designing secure, scalable cloud applications using Python, TypeScript, Node.js, AWS, Docker, and PostgreSQL.",
     "Experienced in implementing AWS IAM, VPC, EC2 hardening, KMS, S3 policies, CloudWatch, Security Groups, NACLs, Route53, Load Balancer, and Parameter Store.",
-    "Ranked in the Top 4% on TryHackMe with hands-on experience in penetration testing, Active Directory security, vulnerability assessments, and secure software development.",
+    "Ranked in the Top 3% on TryHackMe with hands-on experience in penetration testing, Active Directory security, vulnerability assessments, and secure software development.",
   ],
 
   skills: {
@@ -301,7 +301,7 @@ export const profile = {
   ] satisfies ProfileExperience[],
 
   tryhackme: {
-    ranking: "Top 4% global ranking",
+    ranking: "Top 3% global ranking",
     rooms: "140+ completed rooms",
     streak: "215+ day learning streak",
     badges: "23 badges",

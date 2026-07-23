@@ -60,7 +60,7 @@ export default function Home() {
   };
 
   const stats = [
-    { icon: Target, label: "TryHackMe", value: "Top 4%" },
+    { icon: Target, label: "TryHackMe", value: "Top 3%" },
     { icon: Terminal, label: "Rooms", value: "140+" },
     { icon: Award, label: "Streak", value: "215+ days" },
     { icon: Shield, label: "Uptime", value: "99.9%" },
