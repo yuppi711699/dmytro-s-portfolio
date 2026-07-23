@@ -109,13 +109,7 @@ export const profile = {
       "Incident Response",
       "Splunk",
     ],
-    databases: [
-      "PostgreSQL",
-      "MongoDB",
-      "Redis",
-      "RabbitMQ",
-      "SQL",
-    ],
+    databases: ["PostgreSQL", "MongoDB", "Redis", "RabbitMQ", "SQL"],
     frameworks: [
       "MITRE ATT&CK",
       "NIST CSF",
@@ -255,7 +249,7 @@ export const profile = {
   experience: [
     {
       company: "AstroNatal Bot",
-      position: "Full-Stack Engineer",
+      position: "Security Engineer",
       period: "Dec 2025 — Present",
       highlights: [
         "Designed AI SaaS platform using TypeScript, Python, AWS and Docker.",
@@ -265,7 +259,7 @@ export const profile = {
     },
     {
       company: "ProBuy Inc.",
-      position: "Lead Backend Developer",
+      position: "Lead Software Engineer",
       period: "Sep 2024 — Nov 2025",
       highlights: [
         "Designed 100+ REST APIs using NestJS and TypeScript.",
@@ -327,9 +321,7 @@ export const profile = {
     ],
   },
 
-  education: [
-    "Master degree of Automation and Computer Technologies",
-  ],
+  education: ["Master degree of Automation and Computer Technologies"],
 
   certifications: [
     {
